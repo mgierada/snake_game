@@ -2,6 +2,7 @@
 // the snake is divided into small segments, which are drawn and edited on each 'draw' call
 let numSegments = 10;
 let direction = 'right';
+// const canvas = document.getElementById('myCanvas');
 
 const xStart = 0; //starting x coordinate for snake
 const yStart = 250; //starting y coordinate for snake
@@ -13,16 +14,35 @@ let yCor = [];
 let xFruit = 0;
 let yFruit = 0;
 let scoreElem;
+let title_element;
 
 function setup() {
+  var title = select('title');
+  var title_width = title.style.width;
+  var score = select('score');
+  var score_width = title.style.width;
+
+  title_element = createDiv('Snake Game');
+  title_element.position(title_width, windowHeight / 8);
+  // title_element.center('horizontal');
+  title_element.style('color', 'white');
+  title_element.style('font-size', '40px');
+  title_element.id = 'title';
+
   scoreElem = createDiv('Score = 0');
-  scoreElem.position(20, 20);
+  scoreElem.position(score_width, windowHeight - (windowHeight / 8));
   scoreElem.id = 'score';
   scoreElem.style('color', 'red');
-  // scoreElem.bold(2);
+  scoreElem.style('font-size', '30px');
 
-  createCanvas(500, 500);
-  frameRate(20);
+
+  // let div = createDiv('').size(windowWidth, windowHeight);
+  // div.style('background-color', 'orange');
+  // div.center();
+
+  var cnv = createCanvas(500, 500);
+  cnv.style('display', 'block');
+  frameRate(10);
   stroke(255);
   strokeWeight(10);
   updateFruitCoordinates();
@@ -33,8 +53,15 @@ function setup() {
   }
 }
 
+// function draw_snake() {
+//   const canvas = document.getElementById('myCanvas');
+//   if (canvas.getContext) {
+//     const ctx = canvas.getContext('2d');
+// }
+
 function draw() {
   background(0);
+  // title_element.style('font-size', '15')
   for (let i = 0; i < numSegments - 1; i++) {
     // line(xCor[i], yCor[i], xCor[i + 1], yCor[i + 1]);
     point(xCor[i],yCor[i])
