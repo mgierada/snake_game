@@ -73,7 +73,7 @@ function draw() {
     
   }
   updateSnakeCoordinates();
-  checkGameStatus();
+  // checkGameStatus();
   checkForFruit();
 }
 

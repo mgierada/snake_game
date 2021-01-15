@@ -6,7 +6,7 @@ body {
 }
 
 body {
-  background-color: rgb(49, 47, 47);
+  background-color: rgb(67, 163, 67);
   margin: 10;
   display: flex;
 
@@ -16,3 +16,4 @@ body {
   /* This centers our sketch vertically. */
   align-items: center;
 }
+rgb(49, 47, 47)
