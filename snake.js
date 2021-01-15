@@ -73,7 +73,7 @@ function draw() {
     
   }
   updateSnakeCoordinates();
-  // checkGameStatus();
+  checkGameStatus();
   checkForFruit();
 }
 
@@ -173,7 +173,7 @@ function checkSnakeCollision() {
  I add the last segment again at the tail, thereby extending the tail)
 */
 function checkForFruit() {
-  stroke('purple')
+  stroke(67, 163, 67)
   point(xFruit, yFruit);
   stroke(0)
   if (xCor[xCor.length - 1] === xFruit && yCor[yCor.length - 1] === yFruit) {
